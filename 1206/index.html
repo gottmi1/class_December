@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>스크롤 실험 - LX인터내셔널</title>
+
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;}
+li{list-style:none;}
+/*  */
+#wrapper{
+    position:relative; overflow:hidden;
+    width:100%;height:100vh;
+    background:#000;}
+ 
+.cont{
+    position:absolute; overflow:hidden;
+    width:100%;height:100vh;
+    left:0;}
+ 
+/*  */
+#cont_1{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;align-items:center;
+    top:0;
+    background:salmon;
+    font-size:10vw;color:#fff;}
+ 
+/*  */
+#cont_2{
+    top:0%;
+    /* top:100%; */
+    background:#fff;
+    transition:top 1s;}
+ 
+#slider{
+    display:flex;
+    align-items:flex-start;
+    position:absolute;
+    height:300px;
+    top:calc(50% - 150px); left:10vw;
+    background:#eee;
+    transition:transform .3s;}
+ 
+#slider li{
+    flex:none;
+    display:flex;
+    justify-content:center;align-items:center;
+    position:relative; overflow:hidden;
+    height:100%;
+    aspect-ratio:1/1;
+    margin:0 200px 0 0;
+    background:slategray;
+    border:2px solid black;
+    transition:transform .2s;}
+ 
+    #slider li:nth-child(2n){top:-30%;}
+    #slider li:nth-child(3n){top:30%;}
+ 
+#slider li div{
+    position:relative;z-index:5;
+    width:calc(100% - 4rem);height:calc(100% - 4rem);
+    background:rgba(255,255,255,.5);
+}
+ 
+ 
+.redSpan{
+    display:block;position:absolute;
+    left:0;top:0;
+    width:10px;height:10px;
+    background:salmon;
+    border-radius:50%;
+    transform:scale(.1);
+    transition:all .8s;
+}
+ 
+/* .redSpan.on{width:100%;height:100%;} */
+ 
+/*  */
+#indicator{
+    position:absolute;
+    left:50%;bottom:10%;
+    transform:translateX(-50%);
+    width:80%; height:10px;
+    background:#eee;
+    border:1px solid #ccc;}
+ 
+#indi_bar{
+    position:absolute;
+    left:0;top:0;
+    height:100%;width:100%;
+    background:rgba(0,0,0,.5);
+    clip-path:polygon(0% 0%, 10px 0%, 10px 100%, 0% 100%);
+    transition:all .2s;}
+
+    </style>
+</head>
+<body>
+<section id="wrapper">
+    <article class="cont" id="cont_1">
+        HELLO
+    </article><!-- cont -->
+
+    <article class="cont" id="cont_2">
+        <ul id="slider">
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+            <li><div>lorem</div><span class="redSpan"></span></li>
+        </ul>
+        <div id="indicator">
+            <div id="indi_bar"></div>
+        </div>
+    </article><!-- cont -->
+</section><!-- wrapper -->
+
+<script>
+  const cont_1 = document.getElementById('cont_1');
+const cont_2 = document.getElementById('cont_2');
+const slider = document.getElementById('slider');
+const s_wid = slider.offsetWidth;
+const s_li = slider.children;
+const indi_bar = document.getElementById('indi_bar');
+let win_wid = window.innerWidth;
+let s_move_max = (s_wid - (win_wid/2)) * -1;
+let s_pos = 0;
+let li_pos = 0;
+let pct = 0;
+ 
+ 
+cont_1.addEventListener('wheel',function(e){
+    e.preventDefault;
+    if(e.deltaY > 0){
+        cont_2.style.top = `0%`;
+    }
+});
+//무슨 기능을 하는지 모르겠음 
+
+cont_2.addEventListener('wheel',function(e){
+    e.preventDefault;
+    if(e.deltaY < 0 && s_pos >= 0){
+        setTimeout(()=>{
+            cont_2.style.top = `100%`;
+        },500);
+        return;
+    }
+    move_slider(e.deltaY);
+    on_indicator();
+});
+//컨테이너2에서 위로 스크롤시 컨테이너 1나오게 하는 이벤트
+ 
+function move_slider(amount){
+    s_pos -= amount;
+    if(s_pos < s_move_max){
+        s_pos = s_move_max;
+        return;
+    }else if(s_pos > 0){
+        s_pos = 0;
+        return;
+    }
+    slider.style.transform = `translateX(${s_pos}px)`;
+    li_upDown(amount);
+    
+}
+// 가로스크롤 이벤트
+ 
+function li_upDown(amount){
+    li_pos += amount;
+    for(let i=0; i<s_li.length; i++){
+        if(i%2 != 0){
+            s_li[i].style.transform = `translateY(${li_pos / (i*5)}px)`;
+        }else{
+            s_li[i].style.transform = `translateY(${-li_pos / (i*5)}px)`;
+        }
+    }
+}
+//스크롤 시 박스 움직임, 스크롤바 실시간 움직임
+ 
+function on_indicator(){
+    pct = s_pos * 100 / s_move_max;
+    indi_bar.style.clipPath  =`
+        polygon(0% 0%, ${pct}% 0%, ${pct}% 100%, 0% 100%)
+    `;
+}
+// 스크롤 바 움직임
+
+</script>
+</body>
+</html>
+
