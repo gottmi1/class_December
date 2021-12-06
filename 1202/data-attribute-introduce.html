@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data-attribute introduce</title>
+  <style>
+
+    #container section {
+      width: 100vw;
+      height: 100px;
+    }
+
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav ul li {
+      font-size: 3rem;
+    }
+
+
+    #container section:nth-child(1){background-color: darkgoldenrod;}
+    #container section:nth-child(2){background-color: bisque;}
+    #container section:nth-child(3){background-color: teal;}
+    #container section:nth-child(4){background-color:  blueviolet;}
+
+
+  </style>
+</head>
+<body>
+  
+  <nav>
+    <ul>
+      <li data-asas="한글도되나">1</li>
+      <li data-asas="3">2</li>
+      <li data-asas="2">3</li>
+      <li data-asas="1">4</li>
+    </ul>
+  </nav>
+
+
+
+  <div id="container">
+    <section data-asas="한글도되나">1</section>
+    <section data-asas="3">2</section>
+    <section data-asas="2">3</section>
+    <section data-asas="1">4</section>
+    <!-- date- 뒤에 오는 단어는 무엇이든 상관 없음 -->
+  </div>
+
+  <script>
+
+    const sect = document.querySelector('#container');
+
+    const liItems = document.querySelectorAll('nav > ul > li');
+
+
+    for(let idx = 0; idx < liItems.length; idx++) {
+      liItems[idx].style.visibility = "hidden";
+      console.log(` li data-attribute : ${liItems[idx].dataset.asas}`);
+      //li안에 있는 date-index값을 콘솔에 띄우는 작업 다만 dataset.뒤는 html에서 data- 다음에 오는 단어로 해줘야 함 정해진 게 아니라 정하는 것임
+    }
+
+
+    sect.addEventListener('click', (event) => {
+      let getData = event.target.dataset.asas;
+      console.log(getData);
+      // 선택한 타겟의 date-index값을 받아옴
+      try {
+
+        for(let i = 0; i < liItems.length; i++) {
+          if(liItems[i].dataset.asas === getData) { // 현재 li의 asas값이 getData로 받아온 선택한 컨테이너의 asas값과 같을 경우
+            liItems[i].style.visibility = "visible";
+            liItems[i].animate([
+              {color:"red"},
+              {color:"blue"}
+            ],{
+              duration:1000
+            });
+          } else {
+            liItems[i].style.visibility = "hidden";
+            // 그 외
+          }
+        }
+        // console.log(liItems.dataset.index);
+      } catch {
+        console.log('error');
+        //트라이/캐치 문은 트라이 도중 실행가능한 코드에 에러가 있으면 즉시 중단하고 캐치를 실행한다고 함.
+      }
+    });
+
+
+
+
+  </script>
+
+
+</body>
+</html>
