@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    body {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #drag-item{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      cursor: move;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div id="drag-item"></div>
+
+
+  <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+      function dragElement(element) {
+        let [poOne,poTwo,poThr,poFour] = [0, 0, 0, 0,];
+
+        element.addEventListener('mousedown', dragMouseDown);
+
+        function dragMouseDown(event) {
+          event = event || window.event;
+          event.preventDefault();
+
+          poThr = event.clientX;
+          poFour = event.clientY;
+
+          document.addEventListener('mouseup', closeDragElement);
+          document.addEventListener('mousemove', elementDrag);
+
+          console.log(poThr);
+          console.log(poFour);
+        } 
+
+        function elementDrag(event) {
+          event = event || window.event;
+          event.preventDefault();
+
+          poOne = poThr - event.clientX;
+          poTwo = poFour - event.clientY;
+
+          poThr = event.clientX;
+          poFour = event.clientY;
+
+          element.style.top = (element.offsetTop - poTwo) + "px";
+          element.style.left = (element.offsetLeft - poOne) + "px";
+          console.log(element.offsetTop)
+          console.log(poTwo);
+          console.log(element.offsetLeft)
+          console.log(poOne);
+        }
+
+        function closeDragElement() {
+          document.removeEventListener('mouseup', closeDragElement);
+          document.removeEventListener('mousemove', elementDrag);
+        }
+
+      }
+      const itemTag = document.querySelector('#drag-item');
+      dragElement(itemTag);
+    })
+
+  </script>
+</body>
+</html>
