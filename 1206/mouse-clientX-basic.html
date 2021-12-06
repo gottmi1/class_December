@@ -13,20 +13,40 @@
         height: 100vh;
         background-color: cornflowerblue;
       }
-
+      .fixed{
+        width: auto;
+        height: auto;
+        position: fixed;
+        top: 0;
+      }
 
     </style>
 </head>
 <body>
-  <div id="container">
-    <p id="client-x"></p>
-    <p id="client-y"></p>
-    <p id="screen-x"></p>
-    <p id="screen-y"></p>
-    <p id="offset-x"></p>
-    <p id="offset-y"></p>
+
+  <div class="fixed">
+    <p id="client-x" ></p>
+    <p id="client-y" ></p>
+    <p id="screen-x" ></p>
+    <p id="screen-y" ></p>
+    <p id="offset-x" ></p>
+    <p id="offset-y" ></p>
+    <p id="scrollY"></p>
+  </div>
+
+    <div id="container">
+    
+
 
   </div>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+  <section style="background-color: red; width: 100vw; height: 100vh;"></section>
+
 
   <script>
     window.addEventListener('mousemove', (event) => {
@@ -36,10 +56,17 @@
       document.querySelector('#offset-x').textContent = `마우스의 가로 오프셋값 : ${event.offsetX}`;
       document.querySelector('#offset-y').textContent = `마우스의 세로 오프셋값 : ${event.offsetY}`;
       document.querySelector('#screen-x').textContent = `마우스의 세로 스크린값 : ${event.screenX}`;
-      document.querySelector('#screen-y').textContent = `마우스의 세로 스크린값 : ${event.screenY}`;
-      
-    })
+      document.querySelector('#screen-y').textContent = `마우스의 세로 스크린값 : ${event.screenY}`;      
 
+      // 스크린 : 모니터 크기
+      // 클라이언트 : 화면 기준
+      // 오프셋 : 요소 기준
+        })
+
+        window.addEventListener('wheel' ,() => {
+        document.querySelector('#scrollY').textContent = `마우스 스크롤값 : ${scrollY}`;
+
+        })
 
 
 
