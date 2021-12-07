@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script> 
+  const arr = [];
+  let a1 = parseInt(prompt("첫번째 숫자를 입력하세요")); 
+  arr.push(a1);
+  console.log(arr);
+  let a2 = parseInt(prompt("더할 숫자를 입력하세요")); 
+  let a3 = parseInt(prompt("나눌 숫자를 입력하세요")); 
+
+
+  console.log(typeof a1);
+  let value = 0;
+  
+  function sum(x , y, z){ 
+    x = a1;
+    y = a2;
+    z = a3;
+    return value = (x + y)/z;
+  } 
+
+
+  sum(); 
+
+  document.write(`정답은 ${value}`); 
+
+
+  </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    function sum(x,y,z) {
+    x = prompt(`첫번째 값을 입력해주세요`);
+    console.log(x);
+    y = prompt(`두번째 값을 입력해주세요`);
+    console.log(y);
+    z = prompt(`세번째 값을 입력해주세요`);
+    console.log(z);
+
+    if ( x = Number) {
+      y = prompt(`두번째 값을 입력해주세요`);
+      console.log(y);
+      if ( y = Number) {
+        z = prompt(`세번째 값을 입력해주세요`);
+        console.log(z);
+        if ( z = Number) {
+          console.log((x+y)/z);
+          return;
+        } else {
+          alert('숫자가 아님');
+        }
+      } else {
+        alert('숫자가 아님');
+      }
+    } else {
+      alert('숫자가 아님');
+    }
+
+    // if (x === Number || y === Number || z === Number) {
+    //   console.log(Math.floor((x+y)/z));
+    // } else if ( x != Number) {
+    //   alert("숫자가 아닙니다");
+    // } else if ( y != Number) {
+    //   alert("숫자가 아닙니다");
+    // } else if ( z != Number) {
+    //   alert("숫자가 아닙니다");
+    // }
+    
+    
+
+    // if (x === Number || y === Number || z === Number) {
+    //   console.log(Math.floor((x+y)/z));
+    // } else {
+    //   alert('숫자가 아닙니다');
+    // }
+
+  }
+
+  
+sum();
+  </script>
+</body>
+</html>
