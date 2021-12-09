@@ -122,3 +122,24 @@ a,b,c,d a-1, a-2
 
 gsap
 라이브러리 규칙에 맞춰서 사용하면 된다
+
+jquery : DOM,BOM 라이브러리
+GSAP : 애니메이션만 쓰는 라이브러리
+-> 우리 배우는 것 보다 난이도가 한참 떨어짐
+-> 커스터마이징 -> 원리
+
+node.js 
+자바스크립트 엔진을 꺼내온 거
+npm
+어떤 도서관 ->cli로만 입장가능
+cli 
+커맨드라인
+UI
+유저인터페이스
+API
+개발자가 쓰는 인터페이스
+
+지금까지 배운 것 : HTMLAPI,CSSAPI,DOMAPI,BOMAPI -> 조합해서 웹사이트
+API를 다룰 줄 아는 사람
+
+https://www.oera.com/
