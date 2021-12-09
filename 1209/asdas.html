@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      padding: 0; margin: 0; box-sizing: border-box;
+    }
+
+    section{width: 100vw;height: 100vh; background-color: black; display: flex; justify-content: space-around; align-items: center;}
+    section:nth-child(2){opacity: 0; transition: 1000ms;}
+    div{width: 20%;height: 40%; background-color: wheat; opacity: 1;}
+  </style>
+</head>
+<body>
+  
+  <section></section>
+  <section>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+  </section>
+
+  <script>
+
+    const $sec = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      console.log(scrollY);
+      if (scrollY >= 500) {
+        $sec[1].style.opacity = "1";
+        $sec[1].style.marginTop = "-50px";
+      }
+    })
+
+  </script>
+
+</body>
+</html>
