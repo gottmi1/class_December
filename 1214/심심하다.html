@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+body{
+  overflow: hidden;
+}
+    section{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #box{
+      width: 300vw;
+      height: 50vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      transition: 500ms;
+    }
+    div{
+      width: 20vh;
+      height: 30vh;
+    }
+    #box div:nth-child(1) {background-color: #000;}
+    #box div:nth-child(2) {background-color: #111;}
+    #box div:nth-child(3) {background-color: #222;}
+    #box div:nth-child(4) {background-color: #333;}
+    #box div:nth-child(5) {background-color: #444;}
+    #box div:nth-child(6) {background-color: #555;}
+    #box div:nth-child(7) {background-color: #666;}
+    #box div:nth-child(8) {background-color: #777;}
+    #box div:nth-child(9) {background-color: #888;}
+    #box div:nth-child(10) {background-color: #999;}
+    #box div:nth-child(11) {background-color: #aaa;}
+    #box div:nth-child(12) {background-color: #bbb;}
+  </style>
+</head>
+<body>
+  <section>
+    <div id="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+
+  <script>
+
+    const $box = document.querySelector('#box');
+    let num = 0
+
+    window.addEventListener('wheel', (e) => {
+      e.preventDefault;
+      let delta = e.deltaY;
+      console.log(delta);
+      if (delta > 0) {
+        num++
+        $box.style.marginLeft = "-"+ 10 * num + "vw";
+        let current = $box.style.marginLeft = 10 * num + "vw";
+        console.log(num);
+      } else {
+        num--
+        current.style.marginLeft - 10 *num + "vw";
+        console.log(num);
+      }
+    })
+  </script>
+</body>
+</html>
