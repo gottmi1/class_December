@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+
+    body {
+      /* scroll bar UI 를 감추면 새로운 사용자 경험을 만들어 낼 수 있음 */
+      /* 주석을 해제하여 어떤 연출이 되는지 확인할 것 */
+      overflow-y: hidden;
+      overflow-x: hidden;
+      
+    }
+
+    #con {
+      width: 100vw;
+      height: 500vh;
+      background: rgb(58, 74, 180);
+      background: linear-gradient(180deg, rgba(58, 74, 180, 1) 0%, rgba(252, 176, 69, 1) 100%);
+
+      
+    }
+    #con h1 {
+      font-size:2rem;
+      font-weight: 100;
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      color:darkkhaki;
+      mix-blend-mode:color-dodge;
+      opacity: 0.5;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+
+  <div id="con">
+    <h1>test</h1>
+  </div>
+  
+
+
+  <script>
+
+    const con = document.querySelector('#con');
+    console.log(con);
+    console.dir(con);
+    console.dir(window);
+    // BOM객체에 접근하여 화면 내의 넓이값(스크린 아님)을 구할 수 있는지 확인
+
+    const windowWidth = window.innerWidth;
+    const outWidth = window.outerWidth;
+    console.log(windowWidth);
+    // console.log(outWidth);
+
+    let row = 0;
+    window.addEventListener('wheel', (e) => {
+      const delY = e.deltaY / 100;
+      console.log(delY)
+      // deltaY 아래로 내릴때 양수 올릴때 음수임
+      if (delY > 0) {
+        console.log('plus');
+        row++
+        con.children[0].textContent = ` horizontal X value : ${windowWidth * row} `;
+        console.log(row);
+        // 여기 까진 그냥 텍스트컨텐츠 바꿔주는 동작이 전부
+        // ★★★★★★★★★★★★★★★★주요동작★★★★★★★★★★★★★★★★★★★★
+        window.scrollTo({
+          left: windowWidth * row, // scrollTo를 처음부터 사용했다면 편했을텐데.. window에 값이 무엇무엇이 있는지 계속 확인해보자.
+          behavior: "smooth", // 부드럽게 움직인다
+        });
+        // ★★★★★★★★★★★★★★★★주요동작★★★★★★★★★★★★★★★★★★★★
+      } else {
+        console.log('minus');
+        row--;
+        con.children[0].textContent = ` horizontal X value : ${windowWidth * row} `;
+        console.log(row);
+        window.scrollTo({
+          left: windowWidth * row,
+          behavior: "smooth",
+        })
+      }
+
+      if (row > 5) {
+        row = 5;
+        console.log("최대");
+      }
+      if (row <0) {
+        row = 0;
+        console.log("최소");
+      }
+    })
+
+
+  </script>
+</body>
+</html>
