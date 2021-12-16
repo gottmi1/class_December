@@ -1,0 +1,44 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ header {
+  width: 100vw;
+  height: 40vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 2;
+  margin-top: 30vh;
+  overflow: hidden;
+  margin-bottom: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section{
+  background: linear-gradient(180deg, rgba(133,133,133,.7),black);
+  width: 100vw;
+  height: 300vh;
+  position: relative;
+  z-index: 2;
+}
+
+#bg{
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/grass-315184.jpg) center center no-repeat;
+  opacity: 0.9;
+  filter: blur(4px);
+}
+
+header>p{
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.5em;
+}
