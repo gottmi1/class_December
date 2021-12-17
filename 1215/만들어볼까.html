@@ -15,6 +15,11 @@
       align-items: center;
       flex-direction: column;
     }
+    p{
+      font-size: 4rem;
+      line-height: 2rem;
+      transition: 500ms;
+    }
   </style>
 </head>
 <body>
@@ -34,22 +39,20 @@
   const $header = document.querySelector('header');
   const $p = document.querySelectorAll('header>p');
 
-  const textArr = ['가나다라마바사', '아자차카타파하', '김진원입니다'];
+  const textArr = ['사용자를 위한', '프론트엔드 개발자가 되고싶은', '김진원입니다'];
 
   let indexOne = 0;
   let indexTwo = 0;
   let stringArr = [];
   stringArr = Array.from(textArr[indexOne]);
-  let interval = 1000/textArr[indexOne].length;
+  let interval = 800/textArr[indexOne].length;
 
   
 
   setInterval(() => {
-    
+
     if(indexOne < textArr.length ) {
       if(indexTwo < stringArr.length) {
-        // const newText = document.createTextNode(textArr[indexOne]);
-        // $p[indexOne].appendChild(newText);
         $header.append($p[indexOne]);
         $p[indexOne].textContent += stringArr[indexTwo];
         indexTwo++
@@ -59,7 +62,6 @@
       }
       stringArr = Array.from(textArr[indexOne]);
     }
-
 
   }, interval);
 
