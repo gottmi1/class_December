@@ -6,73 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    ul,li{list-style: none;}
-
-    body{
-      overflow-x: hidden;
-    }
-
-    .hei-0{height: 0;}
-    .hei-85{height: 85vh;}
-    .menu-txt{
-      font-weight: 500;
-      color: #E98F8F;
-      background-color: rgba(155, 155, 155, .2);
-    }
-
-    .over-hid{
-      overflow: hidden;
-    }
-
-    header{
-      width: 100vw;
-      height: 15vh;
-      background-color: beige;
-    }
-
-    #logo{
-      float: left;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20vw;
-      height: 15vh;
-    }
-
-    #menu{
-      display: flex;
-      width: 30vw;
-      height: 15vh;
-      justify-content: center;
-      align-items: center;
-      margin-left: 60vw;
-    }
-    #menu>li{
-      width: 25%;
-      text-align: center;
-      transition: 200ms;
-    }
-    .box{width: 100vw; transition: 200ms; overflow: hidden; position: relative;}
-    div:nth-child(1) {background-color: cadetblue;}
-    div:nth-child(2) {background-color: goldenrod;}
-    div:nth-child(3) {background-color: silver;}
-
-    #project{
-      width: 100vw;
-      height: 200vh;
-      background-color: slategray;
-    }
-    #main>p:nth-child(1){position: absolute; font-size: 3em; top: 10vh;}
-    #main>p:nth-child(2){position: absolute; font-size: 3em; top: 25vh;}
-    #main>p:nth-child(3){position: absolute; font-size: 3em; top: 35vh;}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body class="over-hid">
@@ -80,11 +14,11 @@
   <header>
 
     <article id="logo">
-      <h1>J.W's Portfolio</h1>
+      <h1><a href="#">J.W's Portfolio</a></h1>
     </article>
 
     <ul id="menu">
-      <li>Main</li>
+      <li class="menu-txt">Main</li>
       <li>About</li>
       <li>Skills</li>
       <li>Project</li>
@@ -93,154 +27,33 @@
 
   <div id="main" class="box hei-85">
     
-    <p></p>
-    <p></p>
-    <p></p>
+    <img src="/1217/Untitled-1.png" alt="" style="transition: 800ms; position: absolute; left: -5vw; top: -5vh;" class="opa-0">
+    <img src="/1217/Untitled-2.png" alt="" style="transition: 800ms; position: absolute; left: -5vw; top: -5vh;" class="opa-0">
+    <img src="/1217/Untitled-3.png" alt="" style="transition: 800ms; position: absolute; left: -5vw; top: -5vh;" class="opa-0">
+    <img src="/1217/Untitled-4.png" alt="" style="transition: 800ms; position: absolute; left: -5vw; top: -5vh;" class="opa-0">
+    <img src="/1217/Untitled-5.png" alt="" style="transition: 800ms; position: absolute; left: -5vw; top: -5vh;" class="opa-0">
 
   </div>
-  <div id="about" class="box hei-85">
-    <h1>About이에요</h1>
+  <div id="about" class="box hei-85 po-re">
+    <div id="about-wrap">
+      <div id="picture"></div>
+      <div id="textbox">
+
+      </div>
+    </div>
   </div>
-  <div class="box hei-85">
+  <div id="skills" class="box hei-85 po-re">
     <h1>Skills 에요</h1>
   </div>
 
-  <div id="project">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, officiis at. Accusantium et placeat magni incidunt quo hic necessitatibus quod aspernatur, libero soluta minus impedit, laboriosam laborum perspiciatis officiis! Error?
-    Quis, at ex tenetur error perspiciatis deserunt vitae id reiciendis? Quaerat eligendi consequatur voluptate pariatur. Labore, officiis nihil voluptates culpa possimus vel eaque nobis consequatur repellat, veritatis amet quaerat doloremque.
-    Repudiandae dolor sapiente iste aliquam, itaque, alias sint quo quia ab tempora minus cupiditate! Doloremque assumenda iusto, repudiandae placeat, nemo aperiam maiores distinctio hic, illo officiis voluptate deleniti. Iusto, dolores.
-    Sunt laudantium nihil, illum nemo recusandae vel necessitatibus delectus adipisci facilis eligendi minus sapiente, sed esse, maxime repellendus dignissimos. Aliquam eos sed inventore optio quaerat magni fuga, accusantium voluptas eaque?
-    Ratione reiciendis debitis nisi tempore natus. Consequatur saepe dolor quibusdam, repellat excepturi velit similique eaque. Sit minima repellendus ducimus ullam deleniti, eligendi sunt architecto, temporibus distinctio earum doloribus, autem quos!
-    Iste ipsum architecto repellat repellendus culpa deserunt nisi hic nesciunt necessitatibus nam dolorum sint porro vitae illo facilis, praesentium corrupti ut obcaecati odio. Aliquid non nisi rerum perferendis, cupiditate nesciunt.
-    Dignissimos dolore non nam deleniti, voluptatum maiores corporis voluptatem quos provident et odio, veniam earum atque unde quae iusto eos recusandae cupiditate culpa sequi deserunt. Tempora dignissimos enim minus impedit.
-    Minima, repellendus dignissimos qui maxime voluptates aliquam vel, officia ipsa rerum doloribus enim error, vero saepe mollitia autem? Repellendus, voluptatum soluta! Exercitationem similique maiores pariatur necessitatibus natus quis numquam vero.
-    Eveniet sunt dolor labore rerum aliquam dolores? Molestiae quos, velit veritatis harum nobis maiores, mollitia dolorum explicabo quisquam cum quasi repellendus corporis a placeat ut sequi totam voluptate aspernatur voluptatibus.
-    Illo voluptatibus a minus fuga, ut ad porro accusamus sunt possimus velit facere autem quibusdam, incidunt eos molestias tempore harum sed? Laboriosam natus neque inventore pariatur ab, consequatur non? Porro.
-    Ut itaque atque, adipisci veniam corrupti consequatur illum maiores mollitia eius aliquam rerum explicabo optio tenetur voluptatem corporis enim reiciendis magnam necessitatibus repellendus? Provident, porro! Qui sunt incidunt vel odit!
-    Ab quis, molestias magni atque, nemo consequuntur minima soluta impedit laborum sunt alias, neque dolorem culpa nulla blanditiis nisi fugiat temporibus veritatis maxime vitae. Recusandae provident in ipsa laboriosam non?
-    Recusandae eius iste amet iusto cumque nesciunt tempora pariatur qui necessitatibus voluptas nulla tenetur sed quisquam commodi aut, ipsam non dicta blanditiis, quae itaque. In deserunt quas ex debitis dicta.
-    Consectetur dolore explicabo eligendi ullam aliquid! Est sequi qui, impedit dolorem illo itaque iure animi voluptate nihil voluptates, dolore, dignissimos cumque et cum vel! Cum odit accusamus quo eius consectetur.
-    Minima modi libero voluptas eligendi dolorem debitis minus quod aperiam odio ut omnis fugit perferendis assumenda nobis esse cumque eaque aliquam sapiente inventore at molestias amet, quam cupiditate adipisci? Dignissimos?
-    Omnis laboriosam officia quis? Dolore magni illum vel minus mollitia? Beatae assumenda, culpa vel officiis non ad voluptas quod, quae blanditiis molestiae similique quaerat repellendus perspiciatis, rem distinctio voluptatibus impedit?
-    Natus maxime illo saepe delectus porro dolor inventore cupiditate voluptatibus eligendi. Debitis consectetur tempora ad alias expedita aspernatur, reprehenderit doloribus est mollitia quod id fuga, quo magnam, rem esse incidunt?
-    Maxime ipsam cum enim tenetur nulla vel doloremque cumque incidunt, assumenda deleniti natus reiciendis. Ad cum explicabo, eum, sint laboriosam similique quidem, quae cumque veritatis minus pariatur vitae nisi quam.
-    Ex, commodi magni animi neque ipsam rem. Consequuntur, perspiciatis. Ut vero error suscipit at, obcaecati neque iste minima natus quia ipsa totam reiciendis, deleniti molestias! Commodi omnis excepturi neque illum?
-    Ab incidunt veritatis provident praesentium voluptatum nulla labore numquam voluptatibus, culpa architecto rerum obcaecati tempore, aperiam corrupti modi. Esse quasi voluptate, nostrum iure sit ex sunt officiis culpa labore aspernatur?
-    Qui adipisci obcaecati ducimus illo quia quae ratione maxime facilis? Mollitia odit blanditiis nemo at velit suscipit! Placeat, ipsum asperiores. Similique non adipisci aut maxime possimus laborum error optio explicabo!
-    Ad tempore culpa aut ex, amet delectus cumque nisi eum dignissimos sint iste accusamus aliquid sapiente iusto a pariatur eius repellat? Sint quaerat iusto officia doloremque eveniet perspiciatis dolorem ipsam!
-    Maxime, rerum quia nisi debitis ad illo alias. Architecto necessitatibus dicta officiis blanditiis doloribus totam. Ullam tempore beatae alias aliquam? Molestiae minima cumque necessitatibus aliquam consequuntur quasi odio, veritatis earum.
-    Enim rerum, magnam, omnis maxime neque optio necessitatibus quia sunt asperiores fugit tenetur minima aut facilis cum. Ducimus a id repudiandae. Totam blanditiis unde voluptatum modi vitae, iste possimus deleniti!
-    Dolor a recusandae atque totam esse fuga hic id ratione qui illo nesciunt ad eveniet vitae porro ipsa aliquam, quidem, dicta cupiditate, laudantium in distinctio temporibus earum! Soluta, sapiente magnam.
-    Atque velit pariatur a sint, tempora id minima quae molestiae illum dolorem repellat nulla porro fugiat nisi magnam consequuntur natus ad minus cum perspiciatis placeat molestias autem blanditiis! Quos, quas.
-    Rem molestiae eos aperiam cum. Dolore facere minus quaerat, veniam harum iste reprehenderit labore magni maiores a quasi sit delectus voluptas praesentium cum, voluptate eveniet facilis itaque natus similique. Quos?
-    Exercitationem accusamus maxime saepe labore maiores in praesentium laboriosam minima magni, aperiam pariatur deserunt temporibus cum ipsum iusto accusantium hic nihil nesciunt fuga. Eum, dolores incidunt. Ullam maxime quasi quo?
-    Consequatur sit aliquam pariatur distinctio doloribus illo in, facere inventore, laboriosam nobis totam ea nisi minima alias! Veritatis itaque architecto, asperiores quod modi dignissimos fugit! Et illo saepe error vel.
-    Magni error commodi repudiandae assumenda, atque ullam, perspiciatis fugit voluptas nobis sunt, doloremque quo esse? Inventore corrupti, voluptate fuga unde consequatur dicta maxime velit eaque. Illum asperiores dolore dignissimos? Eveniet!
-    Ut quod saepe neque voluptatibus, ratione doloremque nam dicta consectetur modi pariatur aperiam ad, reiciendis quis tempora veritatis, laborum cum tempore provident eius optio. Aliquid at nam hic rem aspernatur.
-    Optio ab, labore iusto esse expedita delectus magni voluptatibus inventore necessitatibus laudantium illo voluptate, quo odio! Officiis iste voluptate et minus eligendi error accusamus quae? Est nesciunt ad ipsam maxime?
-    Delectus provident odit porro dolorum aut perspiciatis voluptates magnam dicta modi nam officia eligendi earum inventore quam voluptatem, ipsum, aliquid officiis labore voluptate praesentium laborum odio assumenda. Nesciunt, ducimus hic.
-    Reiciendis ut minima nihil dicta corrupti nisi, saepe nostrum excepturi eum repellendus beatae, laborum officiis mollitia eaque natus enim iste aperiam sit. Quas nihil odit natus quo eos? Dolor, modi?
-    Nesciunt aut adipisci consequatur laboriosam quas! Sapiente veritatis alias, mollitia ipsum voluptatum quae expedita dolorem earum neque? Commodi, ea porro unde dolore hic ratione perferendis voluptates iste numquam quaerat distinctio!
-    Rem dolorem recusandae explicabo laboriosam quod. At soluta autem iure perspiciatis quas enim, rem animi aut distinctio maxime, eum dolorum non laudantium. Eligendi fugiat blanditiis quia saepe tenetur consequuntur ad!
-    Sint tenetur, numquam qui magni dicta facilis nihil? Delectus eius possimus laborum ut repellendus impedit rerum dolores omnis illum recusandae, quidem amet commodi iure ipsam eveniet temporibus quae atque quo!
-    Reprehenderit omnis, ea sit repellat libero quidem, eligendi sint doloribus, ipsum et aliquid unde odio! Sint laudantium dicta, quisquam in illum rem nemo, molestiae unde ipsum illo sit eligendi vel!
-    Assumenda quisquam aspernatur itaque repellendus architecto. Recusandae, rem, animi, numquam sint amet harum labore quidem id officiis placeat ipsam. Ducimus, excepturi? Rem explicabo necessitatibus sint velit voluptates reiciendis accusamus cum?
-    Eius repudiandae, impedit aperiam neque harum dolore aspernatur in molestias possimus quis voluptas sint a ullam, velit amet culpa ex? Ullam iste autem facilis quidem, labore impedit quasi nam totam!
-    Quidem aliquam vel dolorem similique eaque porro earum ipsa nihil est fuga culpa tempore exercitationem doloribus id, necessitatibus quae nobis iusto! Voluptatum libero dolore ducimus optio magni consequatur doloribus voluptatem.
-    Rerum dignissimos deleniti vero quaerat enim sapiente accusantium quo non necessitatibus explicabo voluptates tenetur quisquam dolores pariatur iusto incidunt dolorem doloremque iste, totam aliquam quas at! Assumenda vero temporibus nisi!
-    Magni dicta, officiis voluptate praesentium sit quidem. Dolor quidem nihil sed ratione dignissimos, impedit aut eligendi, voluptates excepturi nostrum saepe nisi dolorum. Culpa eligendi explicabo harum id numquam, aperiam dignissimos.
-    Quisquam adipisci doloremque vitae quasi architecto molestias nisi incidunt fugit repellat libero. Soluta hic ipsam et maiores assumenda, obcaecati molestiae dignissimos quibusdam aspernatur nemo consequuntur accusamus eaque placeat odio? Accusamus.
-    Quia mollitia sed sunt quibusdam deserunt reiciendis assumenda delectus consectetur at a temporibus aperiam dolor reprehenderit commodi ipsam incidunt soluta nemo quidem, eius nulla porro eum doloremque officiis quo. Fuga.
-    Porro voluptatum quasi ab quae dolorem, officia alias placeat accusamus cumque perspiciatis omnis maiores quia! Error commodi dolore repellat corrupti omnis harum sapiente. Dignissimos maiores asperiores rerum, commodi expedita veniam?
-    Exercitationem quam doloribus facilis, tenetur consequuntur voluptatibus esse illum minus enim nihil rerum placeat ratione autem unde nostrum distinctio non quo commodi perspiciatis at! Consequuntur, repellendus! Optio deserunt perspiciatis unde.
-    Optio, nulla pariatur? Fuga nihil atque dignissimos obcaecati assumenda, fugit temporibus? Quidem, officia fugit facere voluptatum ipsam quibusdam error non earum, qui libero nulla vitae hic ea quis architecto nesciunt.
-    Ut odit suscipit iste neque explicabo illo expedita, culpa, reprehenderit nesciunt laboriosam molestiae eaque facilis! Velit, voluptates nulla neque quos asperiores inventore sunt laudantium tempore explicabo quod laborum nostrum consequuntur.
-    Odio molestiae asperiores saepe tempora laudantium. Ipsam, eaque voluptate odio earum autem delectus, vel cumque suscipit deserunt culpa ab. Aut deleniti nam et harum distinctio asperiores tempora maiores alias non.
+  <div id="project" class="po-re">
+    <h1>Perfume</h1>
+    <div id="con">
+
+    </div>
   </div>
 
-  <script>
-
-    const $box = document.querySelectorAll('.box');
-    console.log($box);
-    const $list = document.querySelectorAll('#menu>li');
-
-    $list[0].addEventListener('click', () => {
-      $box[0].classList.replace('hei-0','hei-85');
-      $box[1].classList.replace('hei-85','hei-0');
-      $box[2].classList.replace('hei-85','hei-0');
-      document.body.classList.add('over-hid');
-      $list[0].classList.add('menu-txt');
-      $list[1].classList.remove('menu-txt');
-      $list[2].classList.remove('menu-txt');
-      $list[3].classList.remove('menu-txt');
-    })
-    $list[1].addEventListener('click', () => {
-      $box[1].classList.replace('hei-0','hei-85');
-      $box[0].classList.replace('hei-85','hei-0');
-      $box[2].classList.replace('hei-85','hei-0');
-      document.body.classList.add('over-hid');
-      $list[1].classList.add('menu-txt');
-      $list[0].classList.remove('menu-txt');
-      $list[2].classList.remove('menu-txt');
-      $list[3].classList.remove('menu-txt');
-    })
-    $list[2].addEventListener('click', () => {
-      $box[2].classList.replace('hei-0','hei-85');
-      $box[1].classList.replace('hei-85','hei-0');
-      $box[0].classList.replace('hei-85','hei-0');
-      document.body.classList.add('over-hid');
-      $list[2].classList.add('menu-txt');
-      $list[1].classList.remove('menu-txt');
-      $list[0].classList.remove('menu-txt');
-      $list[3].classList.remove('menu-txt');
-    })
-    $list[3].addEventListener('click', () => {
-      $box[1].classList.replace('hei-85','hei-0');
-      $box[2].classList.replace('hei-85','hei-0');
-      $box[0].classList.replace('hei-85','hei-0');
-      document.body.classList.remove('over-hid');
-      $list[3].classList.add('menu-txt');
-      $list[1].classList.remove('menu-txt');
-      $list[2].classList.remove('menu-txt');
-      $list[0].classList.remove('menu-txt');
-    })
-
-
-  const $header = document.querySelector('#main');
-  const $p = document.querySelectorAll('#main>p');
-
-  const textArr = ['바카미타이 코도모나노네', '유메오 오옷테 키즈츠이테', '우소가 헤타나쿠세니 와라에나이 에가오 미세타'];
-
-  let indexOne = 0;
-  let indexTwo = 0;
-  let stringArr = [];
-  stringArr = Array.from(textArr[indexOne]);
-  let interval = 1000/textArr[indexOne].length;
-
-  
-
-  setInterval(() => {
-    
-    if(indexOne < textArr.length ) {
-      if(indexTwo < stringArr.length) {
-        // const newText = document.createTextNode(textArr[indexOne]);
-        // $p[indexOne].appendChild(newText);
-        $header.append($p[indexOne]);
-        $p[indexOne].textContent += stringArr[indexTwo];
-        indexTwo++
-      } else {
-        indexTwo = 0;
-        indexOne++;
-      }
-      stringArr = Array.from(textArr[indexOne]);
-    }
-
-
-  }, interval);
-
-
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
